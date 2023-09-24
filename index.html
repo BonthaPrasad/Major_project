@@ -280,6 +280,58 @@ ul{
       flex-basis:100%;
    }
 }
+.search-bar{
+   background: #fff;
+   width:"90%";
+   max-width:800px;
+   display:flex ;
+   padding:2px;
+   border-radius: 4px;
+}
+.select{
+   background:#160053;
+   display:flex;
+   align-items: center;
+   justify-content: space-between;
+   color:#fff;
+   width:300px;
+   padding:25px 20px;
+   cursor: pointer;
+   border-radius: 4px;
+
+
+}
+#select img{
+   width:15x;
+
+} 
+#select ul{
+   position:absolute;
+   top:120%;
+   left:0;
+   list-style: none;
+   background: #fff;
+   color:#555;
+   width:100%;
+   border-radius: 4px;
+   max-height: 0;
+   overflow:hidden;
+   transition:max-height 0.5s;
+}
+#select ul li{
+   padding:10px 20px;
+   cursor:pointer;
+}
+.search-bar input{
+   padding: 10px 25px;
+   width:100%;
+   border:none;
+   outline:none;
+   font-size: 18px;
+}
+#select ul open{
+   max-height:300px;
+}
 </style>
 </head>
 <body>
@@ -288,15 +340,33 @@ ul{
     <div class="navbar">
         <div class="logo">
             <img src="img.jpg" width="300px">
+
           
         </div>
      <nav>
         <ul id="menuItems">
             <li><a href="">Home</a></li>
-            <li><a href="">Products</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">About us</a></li>
             <li><a href="">Account</a></li>
+
         </ul>
+        <div class="container ">
+         <div class="search-bar">
+         <div id="select">
+            <p>All Categories</p>
+            <img src="arrow.png"width="20px" height="20px">
+            <ul>
+               <li class="options">All Categories</li>
+               <li class="options">Electronis</li>
+               <li class="options">Furniture</li>
+               <li class="options">Sports</li>
+               <li class="options">Fashion</li>
+            </ul>
+         </div>
+         <input type="text" placeholder="Search in All categories">
+      </div>
+   </div>
      </nav>
      <img src="img 4.png"width="30px" height="30px"> 
      <img src="img 23.png"class="menu-icon"width="30px" height="30px" onclick="menutoggle()">
@@ -562,6 +632,11 @@ ul{
          MenuItems.style.maxHeight="0px"
       }
    }
+   let select=document.getElementById("select");
+   let list=document.getElementById(list);
+    select.onclick=function(){
+      list.classlist.toggle(open);
+    }
 </script>
 </body>
 </html>
